@@ -1,6 +1,4 @@
-
 function show () {
-    console.log(document.getElementById('arrow').classList)
     document.getElementById('arrow').style.opacity = 1;
     document.getElementById('paste_links').style.opacity = 1;
 }
