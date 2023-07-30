@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Jesse Xia</title>
 
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/43c70cd915.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="img"></div>
-    <!--    <p>Under construction... :)</p> -->
     <main>
-        <div class="rect layer1"></div>
-        <div class="rect layer2"></div>
-            <p>Jesse Xia</p>
-            <a href="">LinkedIn</a>
-            <a href="">Resume</a>
-            <a href="">GitHub</a>
+        <div class="info">
+            <p id="name">Jesse Xia</p>
+            <a href="https://www.linkedin.com/in/jesse-xia/">LinkedIn</a>
+            <a href="">Resume/CV</a>
+            <a href="https://github.com/x-jesse">GitHub</a>
+            <div class="paste" id="paste" onmouseover="show()" onmouseleave="hide()">Past Employer Evaluations
+                <i class="fa-solid fa-angle-down" id="arrow"></i>
+                <div class="paste_links" id="paste_links">
+                    <a href="">Sep 2022 - Dec 2022 Blackberry Ltd.</a>
+                    <a href="">Jan 2022 - Apr 2022 Rogers Communications Inc.</a>
+                </div>
+            </div>
+        </div>
+        <img src="flower.png" alt="flower">
     </main>
-    <!--    <canvas id="canvas"></canvas>-->
-    <!--    <script src="draw.js"></script>-->
+    <footer>Last updated Jul 30, 2023</footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
