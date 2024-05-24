@@ -8,6 +8,8 @@ const VIEWPORT_WIDTH = Math.max(document.documentElement.clientWidth || 0, windo
 const ASPECT_RATIO = window.devicePixelRatio || 1;
 const DINO_ASPECT_RATIO = 94 / 88;
 
+export const SPRITES = {'dino_still': [76, 97], 'dino_jump': [1675, 88, 97], 'dino_run1': [1855, 88, 97], 'dino_run2': [1943, 88, 97]}
+
 export function setup(canvas, context) {
     canvas.width = VIEWPORT_WIDTH;
     canvas.style.width = canvas.width + 'px';
@@ -33,4 +35,9 @@ export function setup(canvas, context) {
 
 export function clear(canvas) {
     canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function getSprites() {
+
+
 }

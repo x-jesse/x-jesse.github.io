@@ -1,5 +1,8 @@
+import { SPRITES } from "./setup";
+
 const DINO_ASPECT_RATIO = 94 / 88;
 const DINO_RUN = [new Image(), new Image()];
+// DINO_RUN[0].src = 'assets/dino_run1.png';
 DINO_RUN[0].src = 'assets/dino_run1.png';
 DINO_RUN[1].src = 'assets/dino_run2.png';
 

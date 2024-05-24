@@ -1,7 +1,7 @@
 const BASE_GAME_SPEED = 15;
 
 export default class Obstacle {
-    obstacleQueue = 0;
+    static obstacleQueue = [];
 
     constructor(context, xPosition, yPosition, sprite) {
         this.context = context;
@@ -18,7 +18,10 @@ export default class Obstacle {
     }
 
     generate() {
+        let max = 200, min = 100;
+        let queueXPos = Math.floor(Math.random() * (max - min + 1) + min);
 
+        obstacleQueue.push(new Obstacle())
     }
 
     draw() {
