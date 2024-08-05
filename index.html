@@ -53,20 +53,51 @@
             <li class="dropdown hidden">
               <a href="#experience">Experience</a>
               <ul class="dropdown-content hidden">
-                <p>TODO</p>
-                <p>adf</p>
+                <p>Firmware Release Intern - Geotab</p>
+                <ul>
+                  <li>Did something</li>
+                  <li>Did something else</li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <p>Network Automation Intern - Blackberry</p>
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <p>Software Developer Intern - Rogers Communications</p>
+                <ul>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <p>Robotic Process Automation Intern - Loblaw Companies</p>
+                <ul>
+                  <li></li>
+                </ul>
               </ul>
             </li>
             <li class="dropdown hidden">
               <a href="#projects">Projects</a>
               <ul class="dropdown-content hidden">
                 <p>I like to build fun things in my spare time</p>
+                <ul>
+                  <li></li>
+                </ul>
+                <p>Flappy flappy bird</p>
+                <p>Capstone</p>
               </ul>
             </li>
             <li class="dropdown hidden" style="padding-bottom: 10vh;">
               <a href="#contact">Contact</a>
               <ul class="dropdown-content hidden">
-                <p>I'd love to connect</p>
+                <p>You can find me here:</p>
+                <ul>
+                  <li>Email</li>
+                  <li>Linkedin</li>
+                  <li>Github</li>
+                  <li>Medium</li>
+                </ul>
               </ul>
             </li>
           </ul>
@@ -86,14 +117,23 @@
       </template>
     </div>
   </div>
+  <footer><span>Last updated Aug 4 2024 v1.1a <3</span></footer>
 </body>
 
 <script>
+  window.addEventListener('keydown', function(e) {
+    if(e.keyCode == 32 && e.target == document.body) {
+      e.preventDefault();
+    }
+  });
+
   window.onload = function () {
     const span = document.getElementById('title-span');
     const newText = 'Jesse Xia';
     const oldText = span.textContent;
     let i = 0;
+
+    setTimeout(() => {document.title = "Jesse Xia"}, 750);
 
     function replaceCharacter() {
       if (i < newText.length) {
@@ -127,7 +167,7 @@
         }, index * 250); // Adjust the delay time as needed (1000ms = 1 second)
       });
     }
-    setTimeout(expandDropdown, 1500 + newText.length * 100)
+    // setTimeout(expandDropdown, 1500 + newText.length * 100);
 
   };
 </script>
