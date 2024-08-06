@@ -21,7 +21,7 @@ html, body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 a {
@@ -48,6 +48,43 @@ footer {
 
 h1 span {
   font-weight: 500;
+}
+
+#navbar > li.dropdown:hover {
+  list-style-type: none;
+}
+
+#navbar > li.dropdown:hover:before {
+  width: 0;
+  height: 0;
+  content: attr(arrow);
+  position: absolute;
+  left: 12.5px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
+
+#error-information-popup-container {
+  position: relative;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 10px;
+  padding: 10px;
+  max-width: 1200px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
 }
 
 .offline .interstitial-wrapper {

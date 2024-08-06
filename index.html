@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/43c70cd915.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="t" class="offline" style="font-family: system-ui, sans-serif; font-size: 75%">
@@ -23,7 +24,7 @@
           <ul id="navbar">
             <li>Checking the network cables, modem, and router</li>
             <li>Reconnecting to Wi-Fi</li>
-            <li class="dropdown hidden">
+            <li class="dropdown hidden" arrow=">">
               <a href="#about">About</a>
               <ul class="dropdown-content hidden">
                 <p>
@@ -50,53 +51,57 @@
                 </p>
               </ul>
             </li>
-            <li class="dropdown hidden">
+            <li class="dropdown hidden" arrow=">">
               <a href="#experience">Experience</a>
               <ul class="dropdown-content hidden">
-                <p>Firmware Release Intern - Geotab</p>
-                <ul>
-                  <li>Did something</li>
-                  <li>Did something else</li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <p>Network Automation Intern - Blackberry</p>
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <p>Software Developer Intern - Rogers Communications</p>
-                <ul>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <p>Robotic Process Automation Intern - Loblaw Companies</p>
-                <ul>
-                  <li></li>
-                </ul>
+                <li>
+                  <p>Firmware Release Intern - Geotab</p>
+                  <ul>
+                    <li>Led development of automated firmware release services supporting 3.1M devices</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Network Automation Intern - Blackberry</p>
+                  <ul>
+                    <li>Developed Python package for automated network monitoring/configuration</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Software Developer Intern - Rogers Communications</p>
+                  <ul>
+                    <li>Developed custom PBI visuals and data forecasting</li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Robotic Process Automation Intern - Loblaw Companies</p>
+                </li>
               </ul>
             </li>
-            <li class="dropdown hidden">
+            <li class="dropdown hidden" arrow=">">
               <a href="#projects">Projects</a>
-              <ul class="dropdown-content hidden">
-                <p>I like to build fun things in my spare time</p>
-                <ul>
-                  <li></li>
-                </ul>
-                <p>Flappy flappy bird</p>
-                <p>Capstone</p>
-              </ul>
+              <!-- <div class="dropdown-content hidden grid-container">
+                <div class="grid-item">Project</div>
+                <div class="grid-item">Flappy Flappy Bird</div>
+                <div class="grid-item">Reinforcement Learning Guide</div>
+                <div class="grid-item">Search and Rescue Autonomous Robot</div>
+                <div class="grid-item">Project</div>
+                <div class="grid-item">Project</div>
+                <div class="grid-item">Project</div>
+              </div> -->
             </li>
-            <li class="dropdown hidden" style="padding-bottom: 10vh;">
+            <li class="dropdown hidden" arrow=">" style="padding-bottom: 10vh;">
               <a href="#contact">Contact</a>
               <ul class="dropdown-content hidden">
                 <p>You can find me here:</p>
                 <ul>
-                  <li>Email</li>
-                  <li>Linkedin</li>
-                  <li>Github</li>
-                  <li>Medium</li>
+                  <li><a href="mailto:jesse.xia@uwaterloo.ca"><i class="fa fa-envelope" aria-hidden="true"></i>
+                    Email</a></li>
+                  <li><a href="https://www.linkedin.com/in/jesse-xia/"><i class="fa fa-linkedin" aria-hidden="true"></i>
+                    Linkedin</a></li>
+                  <li><a href="https://github.com/x-jesse/"><i class="fa fa-github" aria-hidden="true"></i>
+                    Github</a></li>
+                  <li><a href="https://medium.com/@x-jesse"><i class="fa fa-medium" aria-hidden="true"></i>
+                    Medium</a></li>
                 </ul>
               </ul>
             </li>
@@ -117,7 +122,7 @@
       </template>
     </div>
   </div>
-  <footer><span>Last updated Aug 4 2024 v1.1a <3</span></footer>
+  <footer><span>Last updated Aug 5 2024 v1.2a <3</span></footer>
 </body>
 
 <script>
@@ -149,6 +154,7 @@
     setTimeout(() => {
       document.querySelectorAll('#navbar > li').forEach(li => {
         li.classList.toggle('hidden');
+        li.setAttribute('arrow', '►')
       });
       document.querySelectorAll('#navbar > li > a').forEach(link => {
         link.addEventListener('click', (event) => {
@@ -158,6 +164,17 @@
         })
       })
     }, 1000 + newText.length * 100);
+
+    document.querySelectorAll('#navbar > li.dropdown').forEach(li => {
+      li.addEventListener('click', (event) => {
+        if (event.target === li.querySelector('a')) {
+          if (li.getAttribute('arrow') === '►')
+            li.setAttribute('arrow', '▼');
+          else
+            li.setAttribute('arrow', '►');
+        }
+      })
+    })
 
     function expandDropdown() {
       const dropdowns = document.querySelectorAll('.dropdown-content');
