@@ -39,7 +39,7 @@
                 <p>
                   I also like to create educational content. 🎓 By sharing my learnings with the world, I hope to both improve my own understanding
                   and help others along the way. You can find my blog on Medium <a href="https://medium.com/@x-jesse">@x-jesse</a> (est. first publishing date
-                  Aug 25 2024 🗓️).
+                  Sep 1 2024 🗓️).
                 </p>
                 <p>
                   Thanks for stopping by, and I hope you have a great day! 👍
@@ -55,25 +55,25 @@
               <a href="#experience">Experience</a>
               <ul class="dropdown-content hidden">
                 <li>
-                  <p>Python Developer Intern - Geotab</p>
+                  <p><strong>Python Developer Intern - Geotab</strong></p>
                   <ul>
-                    <li>Led development of automated firmware release services supporting 3.1M devices</li>
+                    <li>Led development of automation projects and CI/CD pipelines, leveraging Python and ML to address major time sinks</li>
                   </ul>
                 </li>
                 <li>
-                  <p>Python Developer Intern - Blackberry</p>
+                  <p><strong>Python Developer Intern - Blackberry</strong></p>
                   <ul>
-                    <li>Developed Python package for automated network monitoring/configuration</li>
+                    <li>Python scripting for network automation, device backup, developer tools, and health checks</li>
                   </ul>
                 </li>
                 <li>
-                  <p>Software Developer Intern - Rogers Communications</p>
+                  <p><strong>Software Developer Intern - Rogers Communications</strong></p>
                   <ul>
                     <li>Developed custom PBI visuals and data forecasting</li>
                   </ul>
                 </li>
                 <li>
-                  <p>Software Developer Intern - Loblaw Companies</p>
+                  <p><strong>Software Developer Intern - Loblaw Companies</strong></p>
                   <ul>
                     <li>Robotic Process Automation team</li>
                   </ul>
@@ -82,24 +82,50 @@
             </li>
             <li class="dropdown hidden" arrow=">">
               <a href="#projects">Projects</a>
-              <ul class="dropdown-content hidden">
-                <li><a href="">Flappy Flappy Bird</a></li>
-                <li><a href="">Reinforcement Learning Guide</a></li>
-                <li><a href="">Search and Rescue Autonomous Robot</a></li>
-                <li><a href="">Open GPT-2 Implementation</a></li>
-                <li><a href="">Full-stack Driver Coaching App</a></li>
-                <li><a href="">MNIST Solution</a></li>
-                <li><a href="">Python Workshop Directorship</a></li>
-              </ul>
-              <!-- <div class="dropdown-content hidden grid-container">
-                <div class="grid-item">Project</div>
-                <div class="grid-item">Flappy Flappy Bird</div>
-                <div class="grid-item">Reinforcement Learning Guide</div>
-                <div class="grid-item">Search and Rescue Autonomous Robot</div>
-                <div class="grid-item">Project</div>
-                <div class="grid-item">Project</div>
-                <div class="grid-item">Project</div>
-              </div> -->
+              <div class="dropdown-content hidden grid-container">
+                <div class="grid-item">
+                  <a href="https://github.com/x-jesse/Reinforcement-Learning">
+                    <img src="assets/lunar_lander.gif" alt="">
+                    <span>Reinforcement Learning Library</span>
+                  </a>
+                </div>
+                <div class="grid-item">
+                  <a href="https://github.com/x-jesse/pose-estimation-flappy-bird">
+                    <img src="assets/flappy birb.png" alt="">
+                    <span>Flappy Flappy Bird</span>
+                  </a>
+                </div>
+                <div class="grid-item">
+                  <a href="https://github.com/x-jesse/GPT-2">
+                    <img src="assets/gpt.png" alt="">
+                    <span>Open GPT-2 Implementation</span>
+                  </a>
+                </div>
+                <div class="grid-item">
+                  <a href="https://github.com/x-jesse/Fleet-Feedback">
+                    <img src="assets/ui.png" alt="">
+                    <span>Driver Coaching App</span>
+                  </a>
+                </div>
+                <div class="grid-item">
+                  <a href="">
+                    <img src="assets/robo.png" alt="">
+                    <span>Search and Rescue Autonomous Robot</span>
+                  </a>
+                </div>
+                <!-- <div class="grid-item">
+                  <a href="">
+                    <img src="" alt="">
+                    <span>Learning ML</span>
+                  </a>
+                </div> -->
+                <!-- <div class="grid-item">
+                  <a href="">
+                    <img src="" alt="">
+                    <span>Python Workshop Directorship</span>
+                  </a>
+                </div> -->
+              </div>              
             </li>
             <li class="dropdown hidden" arrow=">" style="padding-bottom: 10vh;">
               <a href="#contact">Contact</a>
@@ -156,9 +182,9 @@
       if (i < newText.length) {
         span.textContent = newText.substring(0, i + 1) + oldText.substring(i + 1);
         i++;
-        setTimeout(replaceCharacter, 100); // Adjust the delay as needed
+        setTimeout(replaceCharacter, 100);
       } else {
-        span.textContent = newText; // Ensure the final text is set correctly
+        span.textContent = newText;
       }
     }
 
@@ -184,6 +210,7 @@
             li.setAttribute('arrow', '▼');
           else
             li.setAttribute('arrow', '►');
+          event.target.classList.toggle('emph');
         }
       })
     })
@@ -193,9 +220,10 @@
       dropdowns.forEach((content, index) => {
         setTimeout(() => {
           content.classList.toggle('hidden');
-        }, index * 250); // Adjust the delay time as needed (1000ms = 1 second)
+        }, index * 250);
       });
     }
+
     // setTimeout(expandDropdown, 1500 + newText.length * 100);
 
   };
