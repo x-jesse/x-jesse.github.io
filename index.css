@@ -69,6 +69,10 @@ ul {
   padding-left: 30px;
 }
 
+p > span{
+  float: right;
+}
+
 #error-information-popup-container {
   position: relative;
   font-size: 0.8rem;
