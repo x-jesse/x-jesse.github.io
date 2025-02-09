@@ -5,6 +5,14 @@ html, body {
   height: 100%;
 }
 
+#moo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background-color: red; */
+  right: 20%;
+}
+
 .icon {
   -webkit-user-select: none;
   user-select: none;

@@ -17,8 +17,10 @@
     <div id="main-content">
       <div class="icon icon-offline" alt=""></div>
       <div id="main-message">
+        <div id="moo"></div>
+        <audio src="assets/moo.mp3" id="moo_sound"></audio>
         <h1>
-          <span id="title-span">No internet</span>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><span id="title-span">No internet</span></a>
         </h1>
         <div id="error-information-popup-container">
           <p>Try:</p>
@@ -223,6 +225,26 @@
     }
 
     // setTimeout(expandDropdown, 1500 + newText.length * 100);
+
+    const moo = document.getElementById("moo");
+    const moo_sound = document.getElementById("moo_sound");
+    moo.addEventListener("mouseenter", () => {
+      moo_sound.currentTime = 0;
+      moo_sound.play();
+    });
+
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    document.body.addEventListener('click', () => {
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().then(() => {
+          console.log('AudioContext resumed!');
+        }).catch((error) => {
+          console.error('Failed to resume AudioContext:', error);
+        });
+      }
+    });
+
 
   };
 </script>
