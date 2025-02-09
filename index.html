@@ -228,19 +228,15 @@
 
     const moo = document.getElementById("moo");
     const moo_sound = document.getElementById("moo_sound");
-    moo.addEventListener("mouseenter", () => {
-      moo_sound.currentTime = 0;
-      moo_sound.play();
-    });
-
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-    document.body.addEventListener('click', () => {
+    moo.addEventListener("mouseenter", () => {
       if (audioContext.state === 'suspended') {
         audioContext.resume();
       }
+      moo_sound.currentTime = 0;
+      moo_sound.play();
     });
-
 
   };
 </script>
