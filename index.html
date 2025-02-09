@@ -34,9 +34,9 @@
                   Press space to start the game :)
                 </p>
                 <p>
-                  Hey, I'm Jesse, a mechatronics engineering student focused on SWE. As a famous philosopher once said, <i>"Quam maxime otiari"</i>
-                  or "the hard-working reap the most benefits from the fruits of their labour". Every day, I aspire to be a better version of myself,
-                  consistently putting forth my best in everything I do, following the axiom <i>humilis conatus</i> or "be humble, yet hard-working".
+                  Hey, I'm Jesse, a mechatronics engineering student focused on SWE. As a famous philosopher once said, <i>"Vita sine labore iucunda est"</i>
+                  or "the hard-working reap the most benefits from the fruits of their labour". Every day, I aspire to be a better version of myself.
+                  By consistently putting forth my best in everything I do, I diligently follow the axiom <i>quam maxime otiari</i> or "be humble, yet hard-working".
                 </p>
                 <p>
                   <b><i>Opus molestum est, otiari optimum</i></b>
@@ -236,6 +236,48 @@
       }
       moo_sound.currentTime = 0;
       moo_sound.play();
+    });
+
+    let positions = [];
+    const maxPositions = 150; // Increased to allow for multiple circles
+    const threshold = 100; // Minimum radius for circular motion
+    let circleCount = 0;
+    const requiredCircles = 4; // Number of circles required before logging
+
+    function distance(p1, p2) {
+      return Math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2);
+    }
+
+    function detectCircle(positions) {
+      if (positions.length < 50) return false; // Increased minimum points
+
+      let minX = Math.min(...positions.map(p => p.x));
+      let maxX = Math.max(...positions.map(p => p.x));
+      let minY = Math.min(...positions.map(p => p.y));
+      let maxY = Math.max(...positions.map(p => p.y));
+
+      let width = maxX - minX;
+      let height = maxY - minY;
+      
+      if (Math.abs(width - height) < threshold && width > threshold) {
+        circleCount++;
+        positions.length = 0; // Clear positions after detecting a circle
+        return circleCount >= requiredCircles;
+      }
+      return false;
+    }
+
+    document.addEventListener("mousemove", (event) => {
+      positions.push({ x: event.clientX, y: event.clientY });
+
+      if (positions.length > maxPositions) {
+        positions.shift();
+      }
+
+      if (detectCircle(positions)) {
+        console.log("User has spun the cursor in multiple circles!");
+        circleCount = 0; // Reset count after logging
+      }
     });
 
   };
