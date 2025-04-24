@@ -12,6 +12,8 @@
   <script src="https://kit.fontawesome.com/43c70cd915.js" crossorigin="anonymous"></script>
 </head>
 
+<audio src="assets/quack.mp3" style="display: hidden;" id="quack_sound"></audio>
+
 <body id="t" class="offline" style="font-family: system-ui, sans-serif; font-size: 75%">
   <div id="main-frame-error" class="interstitial-wrapper">
     <div id="main-content">
@@ -160,7 +162,7 @@
       </template>
     </div>
   </div>
-  <footer><span>Last updated Feb 12 2025 v1.4a &lt;3 Made with 2 ½ cups (312g) all-purpose flour, sifted
+  <footer><span>Last updated Apr 23 2025 v1.4a &lt;3 Made with 2 ½ cups (312g) all-purpose flour, sifted
     2 ½ teaspoons (7.5g) baking powder
     ½ teaspoon (2.5g) baking soda
     ½ teaspoon (2.5g) fine sea salt
@@ -249,6 +251,18 @@
       moo_sound.currentTime = 0;
       moo_sound.play();
     });
+
+    const quack_sound = document.getElementById("quack_sound");
+
+    document.addEventListener('keydown', function(e) {
+      if (audioContext.state == 'suspended') {
+        audioContext.resume();
+      }
+      if (e.keyCode == 32 || e.keyCode == 38){
+        quack_sound.currentTime = 0;
+        quack_sound.play();
+      }
+    })
 
     let positions = [];
     const maxPositions = 150; // Increased to allow for multiple circles
