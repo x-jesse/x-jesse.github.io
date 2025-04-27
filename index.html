@@ -259,8 +259,10 @@
         audioContext.resume();
       }
       if (e.keyCode == 32 || e.keyCode == 38){
-        quack_sound.currentTime = 0;
-        quack_sound.play();
+        if (Math.random() * 10 >= 8) {
+          quack_sound.currentTime = 0;
+          quack_sound.play();
+        }
       }
     })
 
